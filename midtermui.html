@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MidTermUi - Tic Tac Toe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            width: 400px;
+            height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            position: absolute;
+            top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            grid-template-rows: repeat(3, 80px);
+            gap: 10px;
+        }
+
+        .grid-button {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(to bottom, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px solid #999;
+            border-radius: 4px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-button:hover {
+            background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+            border-color: #666;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .grid-button:active {
+            background: linear-gradient(to bottom, #d0d0d0 0%, #c0c0c0 100%);
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-o {
+            color: #2196F3;
+        }
+
+        .button-x {
+            color: #F44336;
+        }
+
+        .info-section {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="title">MidTermUi - Tic Tac Toe</div>
+        
+        <div class="grid-container">
+            <!-- Row 0 -->
+            <button class="grid-button button-o" id="button_0_0">O</button>
+            <button class="grid-button button-x" id="button_0_1">X</button>
+            <button class="grid-button button-x" id="button_0_2">X</button>
+            
+            <!-- Row 1 -->
+            <button class="grid-button button-x" id="button_1_0">X</button>
+            <button class="grid-button button-o" id="button_1_1">O</button>
+            <button class="grid-button button-x" id="button_1_2">X</button>
+            
+            <!-- Row 2 -->
+            <button class="grid-button button-x" id="button_2_0">X</button>
+            <button class="grid-button button-x" id="button_2_1">X</button>
+            <button class="grid-button button-o" id="button_2_2">O</button>
+        </div>
+
+        <div class="info-section">
+            Pattern: OXX / XOX / XXO<br>
+            3×3 Grid with Spacers
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add click event handlers to buttons
+        document.querySelectorAll('.grid-button').forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('Button clicked:', this.id, 'Value:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>
